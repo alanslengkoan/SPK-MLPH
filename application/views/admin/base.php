@@ -9,7 +9,7 @@
     <meta name="keywords" content="Sistem Informasi" />
     <meta name="author" content="Sistem Informasi" />
 
-    <title>Sistem Informasi - <?= $title ?> | <?= ucfirst($this->session->userdata('role')) ?></title>
+    <title>Sistem Pendukung Keputusan <?= $title ?> | <?= ucfirst($this->session->userdata('role')) ?></title>
 
     <!-- begin:: icon -->
     <link rel="apple-touch-icon" href="<?= assets_url() ?>admin/images/icon/apple-touch-icon.png" sizes="180x180" />

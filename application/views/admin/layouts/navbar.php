@@ -5,7 +5,7 @@
                     <i class="feather icon-toggle-right"></i>
                 </a>
                 <a href="<?= admin_url() ?>">
-                    METODE DECISION TREE
+                    DECISION TREE
                 </a>
                 <a class="mobile-options waves-effect waves-light">
                     <i class="feather icon-more-horizontal"></i>

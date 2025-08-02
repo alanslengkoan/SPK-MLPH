@@ -8,8 +8,7 @@
     <meta name="description" content="Sistem Informasi" />
     <meta name="keywords" content="Sistem Informasi" />
     <meta name="author" content="Sistem Informasi" />
-
-    <title>Selamat Datang</title>
+    <title>Selamat Datang | Masuk</title>
 
     <!-- begin:: icon -->
     <link rel="apple-touch-icon" href="<?= assets_url() ?>admin/images/icon/apple-touch-icon.png" sizes="180x180" />

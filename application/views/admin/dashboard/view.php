@@ -24,7 +24,7 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Machine Learning Metode Decision Tree</h3>
+                        <h3>Sistem Pendukung Keputusan Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Metode Decision Tree</h3>
                     </div>
                     <div class="card-block table-border-style">
                         Algoritma Decision Tree (Pohon Keputusan) adalah metode dalam machine learning dan data mining yang digunakan untuk membuat model prediktif dengan membagi data ke dalam cabang-cabang berdasarkan keputusan logis. Tujuannya adalah untuk memetakan sebuah input ke dalam output (klasifikasi atau prediksi) melalui serangkaian aturan berbasis atribut data.

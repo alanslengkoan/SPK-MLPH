@@ -8,6 +8,12 @@ class M_classification extends CI_Model
         return $result;
     }
 
+    public function get_description($nama)
+    {
+        $result = $this->db->query("SELECT c.id_classification, c.nama, c.deskripsi FROM tb_classification AS c WHERE c.nama = '$nama'")->row();
+        return $result;
+    }
+
     public function get_all_data_dt()
     {
         $this->datatables->select('c.id_classification, c.nama, c.deskripsi');

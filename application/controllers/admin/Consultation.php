@@ -57,7 +57,7 @@ class Consultation extends MY_Controller
         $data_training = $this->_get_datatraining();
 
         $konsultasi = json_decode($get_consultation['consultation'], TRUE);
-        
+
         $criteria = $this->m_criteria->get_all()->result();
 
         $klasifikasi = [];
@@ -65,9 +65,10 @@ class Consultation extends MY_Controller
             $klasifikasi[$value->id_classification] = $value->nama;
         }
 
-        $tree  = $this->buildTree($data_training, $criteria , $klasifikasi);
-        $hasil = $this->classify($tree, $konsultasi, $criteria );
-
+        $tree        = $this->buildTree($data_training, $criteria, $klasifikasi);
+        $hasil       = $this->classify($tree, $konsultasi, $criteria);
+        $description = $this->m_classification->get_description($hasil)->deskripsi ?? "-";
+        
         $data = [
             'ini'                 => $this,
             'data_training'       => $data_training,
@@ -76,6 +77,7 @@ class Consultation extends MY_Controller
             'data_classification' => $get_classification,
             'steps'               => $this->steps,
             'hasil'               => $hasil,
+            'description'         => $description
         ];
 
         // untuk load view

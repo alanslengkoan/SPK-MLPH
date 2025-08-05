@@ -99,11 +99,14 @@
                 </div>
                 <div class="card mt-4">
                     <div class="card-header bg-success text-white">
-                        Hasil Klasifikasi
+                        Hasil
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Hasil:</h5>
-                        <p class="card-text"><?= $hasil ?></p>
+                        <h5 class="card-title">Hasil Klasifikasi:</h5>
+                        <p><?= $hasil ?></p>
+                        <hr />
+                        <h5>Rekomendasi Makanan:</h5>
+                        <p><?= $description ?></p>
                     </div>
                 </div>
                 <!-- end:: card -->

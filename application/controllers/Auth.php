@@ -17,7 +17,7 @@ class Auth extends MY_Controller
         checking_role_session($this->role);
 
         if (empty($this->username)) {
-            $this->load->view('login/view');
+            $this->load->view('pages/login/view');
         } else {
             $this->auth($this->username, $this->password);
         }
@@ -56,7 +56,7 @@ class Auth extends MY_Controller
                     ];
                     $this->session->set_userdata($data);
                     exit(json_encode(array('status' => true, 'link' => admin_url())));
-                } else if ($row['roles'] == 'distribusi') {
+                } else if ($row['roles'] == 'users') {
                     $data = [
                         'id'       => $row['id'],
                         'id_users' => $row['id_users'],
@@ -65,17 +65,7 @@ class Auth extends MY_Controller
                         'role'     => $row['roles'],
                     ];
                     $this->session->set_userdata($data);
-                    exit(json_encode(array('status' => true, 'link' => distribusi_url())));
-                } else if ($row['roles'] == 'supplier') {
-                    $data = [
-                        'id'       => $row['id'],
-                        'id_users' => $row['id_users'],
-                        'username' => $row['username'],
-                        'password' => $password,
-                        'role'     => $row['roles'],
-                    ];
-                    $this->session->set_userdata($data);
-                    exit(json_encode(array('status' => true, 'link' => supplier_url())));
+                    exit(json_encode(array('status' => true, 'link' => users_url())));
                 }
             } else {
                 exit($this->_response_message(['title' => 'Gagal!', 'text' => 'Username atau Password Anda salah!', 'type' => 'error', 'button' => 'Ok!']));
@@ -91,7 +81,7 @@ class Auth extends MY_Controller
         checking_role_session($this->role);
 
         if (empty($this->username)) {
-            $this->load->view('register/view');
+            $this->load->view('pages/register/view');
         } else {
             $this->auth($this->username, $this->password);
         }
@@ -111,15 +101,9 @@ class Auth extends MY_Controller
             'password' => password_hash($post['password'], PASSWORD_DEFAULT),
             'roles'    => 'users',
         ];
-        // data pelanggan
-        $pelanggan = [
-            'id_pelanggan' => acak_id('tb_pelanggan', 'id_pelanggan'),
-            'id_users'     => $users['id_users'],
-        ];
 
         $this->db->trans_start();
         $this->crud->i('tb_users', $users);
-        $this->crud->i('tb_pelanggan', $pelanggan);
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $response = ['title' => 'Gagal!', 'text' => 'Gagal Simpan!', 'type' => 'error', 'button' => 'Ok!'];

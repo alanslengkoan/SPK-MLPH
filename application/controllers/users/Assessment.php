@@ -8,7 +8,7 @@ class Assessment extends MY_Controller
         parent::__construct();
 
         // untuk mengecek status login
-        checking_session($this->username, $this->role, ['admin']);
+        checking_session($this->username, $this->role, ['users']);
     }
 
     public function index()
@@ -17,6 +17,6 @@ class Assessment extends MY_Controller
             'assessment' => $this->_get_assessment()
         ];
         // untuk load view
-        $this->template->load('admin', 'Assessment', 'assessment', 'view', $data);
+        $this->template->load('users', 'Assessment', 'assessment', 'view', $data);
     }
 }

@@ -21,7 +21,7 @@
             processing: true,
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
-            ajax: '<?= admin_url() ?>report/get_data_dt',
+            ajax: '<?= users_url() ?>report/get_data_dt',
             columns: [{
                     title: 'No.',
                     data: null,
@@ -49,7 +49,7 @@
                     render: function(data, type, full, meta) {
                         return `
                             <div class="button-icon-btn button-icon-btn-cl">
-                                <a href="<?= admin_url() ?>consultation/results/` + full.id_consultation + `" class="btn btn-info btn-sm" target="_blank"><i class="fa fa-info"></i>&nbsp;Result</a>
+                                <a href="<?= users_url() ?>consultation/results/` + full.id_consultation + `" class="btn btn-info btn-sm" target="_blank"><i class="fa fa-info"></i>&nbsp;Result</a>
                             </div>
                         `;
                     },

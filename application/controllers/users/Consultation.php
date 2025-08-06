@@ -3,14 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Consultation extends MY_Controller
 {
-    protected $steps = [];
-
     public function __construct()
     {
         parent::__construct();
 
         // untuk mengecek status login
-        checking_session($this->username, $this->role, ['admin']);
+        checking_session($this->username, $this->role, ['users']);
     }
 
     // untuk default
@@ -20,7 +18,7 @@ class Consultation extends MY_Controller
             'assessment' => $this->_get_assessment(),
         ];
         // untuk load view
-        $this->template->load('admin', 'Consultation', 'consultation', 'view', $data);
+        $this->template->load('users', 'Consultation', 'consultation', 'view', $data);
     }
 
     public function process()
@@ -33,6 +31,7 @@ class Consultation extends MY_Controller
         }
 
         $data = [
+            'id_users'     => $this->id_users,
             'consultation' => json_encode($data_test),
         ];
 
@@ -69,7 +68,7 @@ class Consultation extends MY_Controller
         $hasil       = $this->decisiontree->classify($tree, $konsultasi, $criteria);
         $steps       = $this->decisiontree->steps($tree);
         $description = $this->m_classification->get_description($hasil)->deskripsi ?? "-";
-
+        
         $data = [
             'ini'                 => $this,
             'data_training'       => $data_training,
@@ -82,6 +81,6 @@ class Consultation extends MY_Controller
         ];
 
         // untuk load view
-        $this->template->load('admin', 'Result', 'consultation', 'result', $data);
+        $this->template->load('users', 'Result', 'consultation', 'result', $data);
     }
 }

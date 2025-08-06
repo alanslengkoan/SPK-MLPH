@@ -63,6 +63,21 @@ abstract class MY_Controller extends CI_Controller
         return $result;
     }
 
+    public function _get_assessment()
+    {
+        $criteria = $this->m_criteria->get_all()->result();
+        $result = [];
+        foreach ($criteria as $key => $value) {
+            $criteria_sub = $this->m_criteria_sub->get_detail($value->id_criteria)->result_array();
+            $result[] = [
+                'id_criteria'  => $value->id_criteria,
+                'nama'         => $value->nama,
+                'sub_criteria' => $criteria_sub
+            ];
+        }
+        return $result;
+    }
+
     public function _criteria_sub()
     {
         $criteria_sub = $this->m_criteria_sub->get_all()->result();

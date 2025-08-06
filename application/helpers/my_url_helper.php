@@ -39,23 +39,13 @@ if ( ! function_exists('admin_url'))
     }
 }
 
-// untuk distribusi url
-if ( ! function_exists('distribusi_url'))
+// untuk users url
+if ( ! function_exists('users_url'))
 {
-    function distribusi_url($url = NULL)
+    function users_url($url = NULL)
     {
         $link = ($url)? '/'.$url : '';
-        return site_url('distribusi/').$link;
-    }
-}
-
-// untuk supplier url
-if ( ! function_exists('supplier_url'))
-{
-    function supplier_url($url = NULL)
-    {
-        $link = ($url)? '/'.$url : '';
-        return site_url('supplier/').$link;
+        return site_url('users/').$link;
     }
 }
 

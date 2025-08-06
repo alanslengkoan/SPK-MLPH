@@ -38,6 +38,11 @@
                         <label>Password</label>
                         <?= form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control form-control-sm', 'placeholder' => 'Password')) ?>
                     </div>
+                     <div class="row">
+                        <div class="col-12 mb-3">
+                            <a href="<?= register_url() ?>">Belum Memiliki Akun?</a>
+                        </div>
+                    </div>
                     <?= form_input(array('type' => 'submit', 'name' => 'login', 'value' => 'Login', 'id' => 'login', 'class' => 'btn btn-success btn-flat m-b-30 m-t-30')) ?>
                     <?= form_close() ?>
                 </div>

@@ -7,6 +7,7 @@ class Decisiontree
 {
     private $ci;
     public $steps = [];
+    public $graphTree = [];
 
     function __construct()
     {
@@ -16,6 +17,11 @@ class Decisiontree
     public function steps()
     {
         return $this->steps;
+    }
+
+    public function graphTree()
+    {
+        return $this->graphTree;
     }
 
     // Hitung Entropy dari subset
@@ -73,22 +79,35 @@ class Decisiontree
     {
         $classes = array_unique(array_column($data, 'classification'));
 
+        // Kalau semua datanya satu kelas
         if (count($classes) == 1) {
-            $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "Hasil klasifikasi: <b>{$klasifikasi[$classes[0]]}</b>";
-            return $klasifikasi[$classes[0]];
+            $label = $klasifikasi[$classes[0]];
+            $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "Hasil klasifikasi: <b>$label</b>";
+            return [
+                'tree' => $label,
+                'graph' => [
+                    'name' => $label
+                ]
+            ];
         }
 
+        // Kalau atribut habis, voting mayoritas
         if (empty($attributes)) {
             $votes = array_count_values(array_column($data, 'classification'));
             arsort($votes);
             $majority = $klasifikasi[array_key_first($votes)];
             $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "Voting mayoritas: <b>$majority</b>";
-            return $majority;
+            return [
+                'tree' => $majority,
+                'graph' => [
+                    'name' => $majority
+                ]
+            ];
         }
 
+        // Pilih atribut terbaik
         $best_gain = -1;
         $best_attr = null;
-
         foreach ($attributes as $attr) {
             $gain = $this->informationGain($data, $attr->id_criteria);
             $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "Information Gain <b>{$attr->nama}</b>: " . round($gain, 4);
@@ -98,26 +117,55 @@ class Decisiontree
             }
         }
 
+        // Kalau tidak ada atribut terbaik
         if (!$best_attr) {
             $votes = array_count_values(array_column($data, 'classification'));
             arsort($votes);
             $majority = $klasifikasi[array_key_first($votes)];
             $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "Tidak ada atribut terbaik, Voting mayoritas: <b>$majority</b>";
-            return $majority;
+            return [
+                'tree' => $majority,
+                'graph' => [
+                    'name' => $majority
+                ]
+            ];
         }
 
         $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth) . "<b>Atribut Terbaik: {$best_attr->nama}</b>";
         $tree = [$best_attr->nama => []];
+        $graphNode = [
+            'name' => $best_attr->nama,
+            'children' => []
+        ];
 
         $splits = $this->splitByAttribute($data, $best_attr->id_criteria);
         $remaining_attributes = array_filter($attributes, fn($a) => $a->id_criteria != $best_attr->id_criteria);
 
         foreach ($splits as $val => $subset) {
             $this->steps[] = str_repeat('&nbsp;&nbsp;', $depth + 1) . "Jika <b>{$best_attr->nama}</b> = <b>$val</b>:";
-            $tree[$best_attr->nama][$val] = $this->buildTree($subset, $remaining_attributes, $klasifikasi, $depth + 2);
+
+            $childResult = $this->buildTree($subset, $remaining_attributes, $klasifikasi, $depth + 2);
+
+            // Simpan ke tree untuk klasifikasi
+            $tree[$best_attr->nama][$val] = $childResult['tree'];
+
+            // Simpan ke node graph
+            $graphNode['children'][] = [
+                'name' => (string) $val,
+                'children' => [
+                    is_array($childResult['graph']) ? $childResult['graph'] : ['name' => (string) $childResult['graph']]
+                ]
+            ];
         }
 
-        return $tree;
+        if ($depth == 0) {
+            $this->graphTree = $graphNode; // simpan ke properti global
+        }
+
+        return [
+            'tree'  => $tree,
+            'graph' => $graphNode
+        ];
     }
 
     // Prediksi klasifikasi dari tree

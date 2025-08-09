@@ -55,6 +55,14 @@
                     <span class="pcoded-mtext">Classification</span>
                 </a>
             </li>
+            <li class="<?= ($this->uri->segment(2) === 'classification_food' ? 'active' : '') ?>">
+                <a href="<?= admin_url() ?>classification_food">
+                    <span class="pcoded-micon">
+                        <i class="fa fa-list"></i>
+                    </span>
+                    <span class="pcoded-mtext">Classification Food</span>
+                </a>
+            </li>
         </ul>
         <div class="pcoded-navigation-label">Pustaka</div>
         <ul class="pcoded-item pcoded-left-item">

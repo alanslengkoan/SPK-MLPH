@@ -135,6 +135,7 @@ $autoload['language'] = array();
 $autoload['model'] = [
     'crud',
     'm_classification',
+    'm_classification_food',
     'm_consultation',
     'm_criteria_sub',
     'm_criteria',

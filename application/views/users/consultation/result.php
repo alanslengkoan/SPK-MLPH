@@ -97,6 +97,14 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Grafik Pohon Keputusan</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="tree-container"></div>
+                    </div>
+                </div>
                 <div class="card mt-4">
                     <div class="card-header bg-success text-white">
                         Hasil
@@ -105,8 +113,32 @@
                         <h5 class="card-title">Hasil Klasifikasi:</h5>
                         <p><?= $hasil ?></p>
                         <hr />
-                        <h5>Rekomendasi Makanan:</h5>
+                        <h5>Deskripsi:</h5>
                         <p><?= $description ?></p>
+                        <hr />
+                        <h5>Rekomendasi Makanan:</h5>
+                        <?php if (count($classification_food) !== 0) : ?>
+                            <table class="table table-striped table-bordered" style="width: 100%;">
+                                <thead>
+                                    <tr align="center">
+                                        <th>Nama</th>
+                                        <th>Berat</th>
+                                        <th>URT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($classification_food as $key => $value) : ?>
+                                        <tr align="center">
+                                            <td><?= $value['name'] ?></td>
+                                            <td><?= $value['weight'] ?></td>
+                                            <td><?= $value['urt'] ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php else : ?>
+                            Tidak ada rekomendasi makanan
+                        <?php endif; ?>
                     </div>
                 </div>
                 <!-- end:: card -->

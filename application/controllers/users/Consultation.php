@@ -64,10 +64,23 @@ class Consultation extends MY_Controller
             $klasifikasi[$value->id_classification] = $value->nama;
         }
 
-        $tree        = $this->decisiontree->buildTree($data_training, $criteria, $klasifikasi);
-        $hasil       = $this->decisiontree->classify($tree, $konsultasi, $criteria);
-        $steps       = $this->decisiontree->steps($tree);
-        $description = $this->m_classification->get_description($hasil)->deskripsi ?? "-";
+        $tree      = $this->decisiontree->buildTree($data_training, $criteria, $klasifikasi);
+        $hasil     = $this->decisiontree->classify($tree['tree'], $konsultasi, $criteria);
+        $steps     = $this->decisiontree->steps();
+        $graphTree = $this->decisiontree->graphTree();
+
+        $show_classification = $this->m_classification->get_description($hasil);
+
+        $classification_food = [];
+        if (empty($show_classification)) {
+            $description = '-';
+        } else {
+            $description         = $show_classification->deskripsi;
+            $classification_food = $this->m_classification_food->get_show_classification($show_classification->id_classification)->result_array();
+        }
+
+        // Buat data untuk grafik (Tree Visualization)
+        $treeData = json_encode($graphTree, JSON_PRETTY_PRINT);
         
         $data = [
             'ini'                 => $this,
@@ -77,7 +90,9 @@ class Consultation extends MY_Controller
             'data_classification' => $get_classification,
             'steps'               => $steps,
             'hasil'               => $hasil,
-            'description'         => $description
+            'description'         => $description,
+            'classification_food' => $classification_food,
+            'tree_json'           => $treeData,
         ];
 
         // untuk load view

@@ -124,6 +124,13 @@
                                         <th>Nama</th>
                                         <th>Berat</th>
                                         <th>URT</th>
+                                        <th>Kalori</th>
+                                        <th>Protein</th>
+                                        <th>Lemak</th>
+                                        <th>Karbohidrat</th>
+                                        <th>Serat</th>
+                                        <th>Natrium</th>
+                                        <th>Kalium</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,6 +139,13 @@
                                             <td><?= $value['name'] ?></td>
                                             <td><?= $value['weight'] ?></td>
                                             <td><?= $value['urt'] ?></td>
+                                            <td><?= $value['kalori'] ?></td>
+                                            <td><?= $value['protein'] ?></td>
+                                            <td><?= $value['lemak'] ?></td>
+                                            <td><?= $value['karbohidrat'] ?></td>
+                                            <td><?= $value['serat'] ?></td>
+                                            <td><?= $value['natrium'] ?></td>
+                                            <td><?= $value['kalium'] ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

@@ -90,6 +90,48 @@
                             <input type="text" class="form-control" name="urt" id="urt" placeholder="Masukkan urt" />
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Kalori *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="kalori" id="kalori" placeholder="Masukkan kalori" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Protein *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="protein" id="protein" placeholder="Masukkan protein" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Lemak *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="lemak" id="lemak" placeholder="Masukkan lemak" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Karbohidrat *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="karbohidrat" id="karbohidrat" placeholder="Masukkan karbohidrat" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Serat *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="serat" id="serat" placeholder="Masukkan serat" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Natrium *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="natrium" id="natrium" placeholder="Masukkan natrium" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Kalium *</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="kalium" id="kalium" placeholder="Masukkan kalium" />
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger btn-sm waves-effect" id="btn-cancel" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Batal</button>

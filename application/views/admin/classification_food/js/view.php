@@ -51,6 +51,41 @@
                     className: 'text-center',
                 },
                 {
+                    title: 'Kalori',
+                    data: 'kalori',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Protein',
+                    data: 'protein',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Lemak',
+                    data: 'lemak',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Karbohidrat',
+                    data: 'karbohidrat',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Serat',
+                    data: 'serat',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Natrium',
+                    data: 'natrium',
+                    className: 'text-center',
+                },
+                {
+                    title: 'Kalium',
+                    data: 'kalium',
+                    className: 'text-center',
+                },
+                {
                     title: 'Aksi',
                     responsivePriority: -1,
                     className: 'text-center',
@@ -77,6 +112,13 @@
             $('#name').attr('required', 'required');
             $('#weight').attr('required', 'required');
             $('#urt').attr('required', 'required');
+            $('#kalori').attr('required', 'required');
+            $('#protein').attr('required', 'required');
+            $('#lemak').attr('required', 'required');
+            $('#karbohidrat').attr('required', 'required');
+            $('#serat').attr('required', 'required');
+            $('#natrium').attr('required', 'required');
+            $('#kalium').attr('required', 'required');
 
             if ($('#form-add-upd').parsley().isValid() == true) {
                 $.ajax({
@@ -150,6 +192,13 @@
                     $('#name').val(response.name);
                     $('#weight').val(response.weight);
                     $('#urt').val(response.urt);
+                    $('#kalori').val(response.kalori);
+                    $('#protein').val(response.protein);
+                    $('#lemak').val(response.lemak);
+                    $('#karbohidrat').val(response.karbohidrat);
+                    $('#serat').val(response.serat);
+                    $('#natrium').val(response.natrium);
+                    $('#kalium').val(response.kalium);
 
                     ini.removeAttr('disabled');
                     ini.html('<i class="fa fa-pencil"></i>&nbsp;Ubah');

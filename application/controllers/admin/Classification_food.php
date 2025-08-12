@@ -44,6 +44,13 @@ class Classification_food extends MY_Controller
             'name'              => $post['name'],
             'weight'            => $post['weight'],
             'urt'               => $post['urt'],
+            'kalori'            => $post['kalori'],
+            'protein'           => $post['protein'],
+            'lemak'             => $post['lemak'],
+            'karbohidrat'       => $post['karbohidrat'],
+            'serat'             => $post['serat'],
+            'natrium'           => $post['natrium'],
+            'kalium'            => $post['kalium'],
         ];
 
         $this->db->trans_start();

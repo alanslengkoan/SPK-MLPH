@@ -8,7 +8,7 @@
     <meta name="description" content="Selamat Datang di Sistem Pendukung Keputusan Fuzzy Mamdani" />
     <meta name="keywords" content="Selamat Datang di Sistem Pendukung Keputusan Fuzzy Mamdani" />
     <meta name="author" content="Selamat Datang di Sistem Pendukung Keputusan Fuzzy Mamdani" />
-    <title>Selamat Datang | Metode Fuzzy Mamdani</title>
+    <title>Selamat Datang | Metode Decision Tree</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     <!-- begin:: navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Metode Fuzzy Mamdani</a>
+            <a class="navbar-brand" href="#">Metode Decision Tree</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,7 +57,7 @@
         <div class="container">
             <div class="intro-message">
                 <h1>Sistem Pendukung Keputusan</h1>
-                <h3>Berbasis Web Untuk Memprediksi Waktu Panen Sereh Wangi Berdasarkan Kondisi Lingkungan Mengguanakan Metode Fuzzy Mamdani</h3>
+                <h3>Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Algoritma Decision Tree</h3>
                 <hr class="intro-divider">
             </div>
         </div>

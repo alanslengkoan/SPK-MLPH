@@ -8,7 +8,7 @@
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="<?= users_url() ?>">Dashboard</a>
+                        <a href="<?= admin_url() ?>">Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -24,10 +24,31 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sistem Pendukung Keputusan Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Metode Decision Tree</h3>
+                        <h3>Sistem Pendukung Keputusan Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Algoritma Decision Tree</h3>
                     </div>
-                    <div class="card-block table-border-style">
-                        Algoritma Decision Tree (Pohon Keputusan) adalah metode dalam machine learning dan data mining yang digunakan untuk membuat model prediktif dengan membagi data ke dalam cabang-cabang berdasarkan keputusan logis. Tujuannya adalah untuk memetakan sebuah input ke dalam output (klasifikasi atau prediksi) melalui serangkaian aturan berbasis atribut data.
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="text-justify">
+                                    Sistem ini merupakan Sistem Pendukung Keputusan berbasis web yang dirancang untuk membantu dalam penentuan makanan bagi lansia penderita hipertensi. Dengan memanfaatkan algoritma Decision Tree, sistem ini mampu mengolah data dan memberikan rekomendasi makanan yang sesuai berdasarkan kondisi kesehatan lansia.
+                                </p>
+                                <p class="text-justify">
+                                    Tujuan dari sistem ini adalah memberikan dukungan kepada pengguna dalam mengambil keputusan yang lebih tepat, sehingga dapat membantu menjaga pola makan yang sehat, mengontrol tekanan darah, serta meningkatkan kualitas hidup lansia penderita hipertensi.
+                                </p>
+                            </div>
+
+                            <!-- Gambar 1 -->
+                            <div class="col-md-6 text-center my-3">
+                                <img src="<?= assets_url() ?>admin/images/01.jpg"
+                                    class="img-fluid rounded" width="500">
+                            </div>
+
+                            <!-- Gambar 2 -->
+                            <div class="col-md-6 text-center my-3">
+                                <img src="<?= assets_url() ?>admin/images/02.jpg"
+                                    class="img-fluid rounded" width="500">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

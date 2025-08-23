@@ -24,16 +24,16 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sistem Pendukung Keputusan Berbasis Web Untuk Memprediksi Waktu Panen Sereh Wangi Berdasarkan Kondisi Lingkungan Mengguanakan Metode Fuzzy Mamdani</h3>
+                        <h3>Sistem Pendukung Keputusan Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Algoritma Decision Tree</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 text-justify">
-                                <p>
-                                    Sistem ini bertujuan untuk Memprediksi Waktu Panen Sereh Wangi dan dirancang untuk membantu perusahaan PT. Kencana Hijau Bina Lestari dalam memprediksi waktu panen sereh wangi dengan menentukan kelayakan panen berdasarkan kondisi lingkungan. Sistem ini menggunakan metode Fuzzy Mamdani untuk mengolah data kondisi lingkungan seperti suhu, kelembapan udara, pH tanah, umur tanaman, dan curah hujan.
+                            <div class="col-12">
+                                <p class="text-justify">
+                                    Sistem ini merupakan Sistem Pendukung Keputusan berbasis web yang dirancang untuk membantu dalam penentuan makanan bagi lansia penderita hipertensi. Dengan memanfaatkan algoritma Decision Tree, sistem ini mampu mengolah data dan memberikan rekomendasi makanan yang sesuai berdasarkan kondisi kesehatan lansia.
                                 </p>
-                                <p>
-                                    Algoritma Decision Tree (Pohon Keputusan) adalah metode dalam machine learning dan data mining yang digunakan untuk membuat model prediktif dengan membagi data ke dalam cabang-cabang berdasarkan keputusan logis. Tujuannya adalah untuk memetakan sebuah input ke dalam output (klasifikasi atau prediksi) melalui serangkaian aturan berbasis atribut data.
+                                <p class="text-justify">
+                                    Tujuan dari sistem ini adalah memberikan dukungan kepada pengguna dalam mengambil keputusan yang lebih tepat, sehingga dapat membantu menjaga pola makan yang sehat, mengontrol tekanan darah, serta meningkatkan kualitas hidup lansia penderita hipertensi.
                                 </p>
                             </div>
 

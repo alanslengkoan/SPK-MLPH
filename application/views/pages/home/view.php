@@ -3,7 +3,7 @@
         <h2 class="text-center"><?= $title ?></h2>
         <hr class="intro-divider">
         <p class="text-justify">
-            Fuzzy Mamdani adalah salah satu metode dalam logika fuzzy yang digunakan untuk pengambilan keputusan berbasis aturan (rule-based decision making). Metode ini diperkenalkan oleh Ebrahim Mamdani pada tahun 1975 dan merupakan salah satu pendekatan paling populer dalam sistem kontrol fuzzy.
+            Decision Tree adalah metode klasifikasi dan prediksi yang berbentuk struktur seperti pohon, di mana setiap simpul (node) mewakili suatu kondisi atau pertanyaan, setiap cabang (branch) mewakili hasil dari kondisi tersebut, dan setiap daun (leaf) menunjukkan keputusan atau output akhir.
         </p>
     </div>
 </section>

@@ -24,10 +24,31 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sistem Pendukung Keputusan Berbasis Web Dalam Penentuan Makanan Lansia Penderita Hipertensi Menggunakan Metode Decision Tree</h3>
+                        <h3>Sistem Pendukung Keputusan Berbasis Web Untuk Memprediksi Waktu Panen Sereh Wangi Berdasarkan Kondisi Lingkungan Mengguanakan Metode Fuzzy Mamdani</h3>
                     </div>
-                    <div class="card-block table-border-style">
-                        Algoritma Decision Tree (Pohon Keputusan) adalah metode dalam machine learning dan data mining yang digunakan untuk membuat model prediktif dengan membagi data ke dalam cabang-cabang berdasarkan keputusan logis. Tujuannya adalah untuk memetakan sebuah input ke dalam output (klasifikasi atau prediksi) melalui serangkaian aturan berbasis atribut data.
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 text-justify">
+                                <p>
+                                    Sistem ini bertujuan untuk Memprediksi Waktu Panen Sereh Wangi dan dirancang untuk membantu perusahaan PT. Kencana Hijau Bina Lestari dalam memprediksi waktu panen sereh wangi dengan menentukan kelayakan panen berdasarkan kondisi lingkungan. Sistem ini menggunakan metode Fuzzy Mamdani untuk mengolah data kondisi lingkungan seperti suhu, kelembapan udara, pH tanah, umur tanaman, dan curah hujan.
+                                </p>
+                                <p>
+                                    Algoritma Decision Tree (Pohon Keputusan) adalah metode dalam machine learning dan data mining yang digunakan untuk membuat model prediktif dengan membagi data ke dalam cabang-cabang berdasarkan keputusan logis. Tujuannya adalah untuk memetakan sebuah input ke dalam output (klasifikasi atau prediksi) melalui serangkaian aturan berbasis atribut data.
+                                </p>
+                            </div>
+
+                            <!-- Gambar 1 -->
+                            <div class="col-md-6 text-center my-3">
+                                <img src="<?= assets_url() ?>admin/images/01.jpg"
+                                    class="img-fluid rounded" width="500">
+                            </div>
+
+                            <!-- Gambar 2 -->
+                            <div class="col-md-6 text-center my-3">
+                                <img src="<?= assets_url() ?>admin/images/02.jpg"
+                                    class="img-fluid rounded" width="500">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

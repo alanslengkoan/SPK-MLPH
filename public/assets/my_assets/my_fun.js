@@ -10,6 +10,7 @@ function justAngka(e) {
     }
 };
 
+// untuk bulan
 function getBulan(bln) {
     var namaBulan = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
     return namaBulan[bln];
@@ -53,6 +54,11 @@ function autoSeparator(Num) {
 // untuk tulisan kapital
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// untuk cut text
+function readMore(string) {
+    return string.substring(0, 100) + '...';
 }
 
 // untuk debugin console log

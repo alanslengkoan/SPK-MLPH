@@ -73,7 +73,7 @@
     <script type="text/javascript" src="<?= assets_url() ?>admin/js/vertical/vertical-layout.min.js"></script>
     <script type="text/javascript" src="<?= assets_url() ?>admin/js/script.min.js"></script>
     <script type="text/javascript" src="<?= assets_url() ?>admin/sweetalert/js/sweetalert.min.js"></script>
-    <script type="text/javascript" src="<?= assets_url() ?>admin/js/custom.js"></script>
+    <script type="text/javascript" src="<?= assets_url() ?>my_assets/my_fun.js"></script>
 
     <script>
         let csrf = $('#<?= $this->security->get_csrf_token_name() ?>');

@@ -83,17 +83,6 @@
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigation-label">Metode</div>
-        <ul class="pcoded-item pcoded-left-item">
-            <li class="<?= ($this->uri->segment(2) === 'consultation' ? 'active' : '') ?>">
-                <a href="<?= admin_url() ?>consultation">
-                    <span class="pcoded-micon">
-                        <i class="fa fa-list"></i>
-                    </span>
-                    <span class="pcoded-mtext">Consultation</span>
-                </a>
-            </li>
-        </ul>
         <div class="pcoded-navigation-label">Laporan</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="<?= ($this->uri->segment(2) === 'report' ? 'active' : '') ?>">

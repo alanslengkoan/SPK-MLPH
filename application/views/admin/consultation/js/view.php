@@ -25,14 +25,7 @@
                         $('#btn-process').html('<i class="fa fa-spinner"></i>&nbsp;Menunggu...');
                     },
                     success: function(response) {
-                        swal({
-                            title: response.title,
-                            text: response.text,
-                            icon: response.type,
-                            button: response.button,
-                        }).then((value) => {
-                            window.location.href = '<?= admin_url() ?>consultation/results/' + response.id;
-                        });
+                        window.location.href = '<?= admin_url() ?>consultation/results/' + response.id;
 
                         $('#btn-process').removeAttr('disabled');
                         $('#btn-process').html('<i class="fa fa-save"></i>&nbsp;Simpan');

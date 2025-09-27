@@ -90,27 +90,53 @@ class Auth extends MY_Controller
     // untuk simpan data
     public function process_save()
     {
-        $post = $this->input->post(NULL, TRUE);
+        $this->load->library('form_validation');
 
-        // data users
-        $users = [
-            'id_users' => acak_id('tb_users', 'id_users'),
-            'nama'     => $post['nama'],
-            'email'    => $post['email'],
-            'username' => $post['username'],
-            'password' => password_hash($post['password'], PASSWORD_DEFAULT),
-            'roles'    => 'users',
-        ];
+        // Aturan validasi
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_users.email]', [
+            'is_unique'   => 'Email sudah terdaftar!',
+            'valid_email' => 'Format email tidak valid!'
+        ]);
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[tb_users.username]', [
+            'is_unique' => 'Username sudah digunakan!'
+        ]);
+        $this->form_validation->set_rules('password', 'Password', 'required');
 
-        $this->db->trans_start();
-        $this->crud->i('tb_users', $users);
-        $this->db->trans_complete();
-        if ($this->db->trans_status() === FALSE) {
-            $response = ['title' => 'Gagal!', 'text' => 'Gagal Simpan!', 'type' => 'error', 'button' => 'Ok!'];
+        if ($this->form_validation->run() == FALSE) {
+            // Jika validasi gagal, kirimkan error tanpa tag <p>
+            $response = [
+                'title' => 'Gagal!',
+                'text'  => strip_tags(validation_errors()), // hapus tag HTML
+                'type'  => 'error',
+                'button' => 'Ok!'
+            ];
         } else {
-            $response = ['title' => 'Berhasil!', 'text' => 'Berhasil Simpan!', 'type' => 'success', 'button' => 'Ok!'];
+            // Ambil input
+            $post = $this->input->post(NULL, TRUE);
+
+            // Data users
+            $users = [
+                'id_users' => acak_id('tb_users', 'id_users'),
+                'nama'     => $post['nama'],
+                'email'    => $post['email'],
+                'username' => $post['username'],
+                'password' => password_hash($post['password'], PASSWORD_DEFAULT),
+                'roles'    => 'users',
+            ];
+
+            $this->db->trans_start();
+            $this->crud->i('tb_users', $users);
+            $this->db->trans_complete();
+
+            if ($this->db->trans_status() === FALSE) {
+                $response = ['title' => 'Gagal!', 'text' => 'Gagal Simpan!', 'type' => 'error', 'button' => 'Ok!'];
+            } else {
+                $response = ['title' => 'Berhasil!', 'text' => 'Berhasil Simpan!', 'type' => 'success', 'button' => 'Ok!'];
+            }
         }
-        // untuk response json
+
+        // Response JSON untuk SweetAlert
         $this->_response($response);
     }
 

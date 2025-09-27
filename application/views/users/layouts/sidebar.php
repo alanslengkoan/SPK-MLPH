@@ -17,7 +17,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-dashboard"></i>
                     </span>
-                    <span class="pcoded-mtext">Dashboard</span>
+                    <span class="pcoded-mtext">Beranda</span>
                 </a>
             </li>
         </ul>
@@ -28,7 +28,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Assessment</span>
+                    <span class="pcoded-mtext">Penilaian</span>
                 </a>
             </li>
         </ul>
@@ -39,7 +39,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Consultation</span>
+                    <span class="pcoded-mtext">Konsultasi</span>
                 </a>
             </li>
         </ul>
@@ -50,7 +50,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">History Consultation</span>
+                    <span class="pcoded-mtext">Riwayat Konsultasi</span>
                 </a>
             </li>
         </ul>

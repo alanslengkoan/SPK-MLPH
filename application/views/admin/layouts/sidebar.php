@@ -17,7 +17,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-dashboard"></i>
                     </span>
-                    <span class="pcoded-mtext">Dashboard</span>
+                    <span class="pcoded-mtext">Beranda</span>
                 </a>
             </li>
         </ul>
@@ -28,7 +28,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Criteria</span>
+                    <span class="pcoded-mtext">Kriteria</span>
                 </a>
             </li>
             <li class="<?= ($this->uri->segment(2) === 'criteria_sub' ? 'active' : '') ?>">
@@ -36,7 +36,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Sub Criteria</span>
+                    <span class="pcoded-mtext">Sub Kriteria</span>
                 </a>
             </li>
             <li class="<?= ($this->uri->segment(2) === 'assessment' ? 'active' : '') ?>">
@@ -44,7 +44,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Assessment</span>
+                    <span class="pcoded-mtext">Penilaian</span>
                 </a>
             </li>
             <li class="<?= ($this->uri->segment(2) === 'classification' ? 'active' : '') ?>">
@@ -52,7 +52,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Classification</span>
+                    <span class="pcoded-mtext">Klasifikasi</span>
                 </a>
             </li>
             <li class="<?= ($this->uri->segment(2) === 'classification_food' ? 'active' : '') ?>">
@@ -60,7 +60,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Classification Food</span>
+                    <span class="pcoded-mtext">Klasifikasi Makanan</span>
                 </a>
             </li>
         </ul>
@@ -71,7 +71,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-users"></i>
                     </span>
-                    <span class="pcoded-mtext">Users</span>
+                    <span class="pcoded-mtext">Pengguna</span>
                 </a>
             </li>
             <li class="<?= ($this->uri->segment(2) === 'datatraining' ? 'active' : '') ?>">
@@ -79,7 +79,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">Data Training</span>
+                    <span class="pcoded-mtext">Data Latih</span>
                 </a>
             </li>
         </ul>
@@ -90,7 +90,7 @@
                     <span class="pcoded-micon">
                         <i class="fa fa-list"></i>
                     </span>
-                    <span class="pcoded-mtext">History Consultation</span>
+                    <span class="pcoded-mtext">Riwayat Konsultasi</span>
                 </a>
             </li>
         </ul>

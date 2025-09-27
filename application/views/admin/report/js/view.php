@@ -41,6 +41,11 @@
                     className: 'text-center',
                 },
                 {
+                    title: 'Klasifikasi',
+                    data: 'nama_classification',
+                    className: 'text-center',
+                },
+                {
                     title: 'Aksi',
                     responsivePriority: -1,
                     className: 'text-center',

@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -18,44 +18,151 @@
     <link rel="shortcut icon" href="<?= assets_url() ?>admin/images/icon/favicon.ico" type="image/x-icon">
     <!-- end:: icon -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" />
-    <link rel="stylesheet" type="text/css" href="<?= assets_url() ?>admin/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="<?= assets_url() ?>page/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="<?= assets_url() ?>my_assets/my_css.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .split-screen-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-pane {
+            flex: 1;
+            background-color: #3674B5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .right-pane {
+            flex: 1;
+            background-image: url(../public/assets/bg.jpg);
+            background-size: cover;
+            background-position: right;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            color: white;
+        }
+
+        .login-box .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-box .logo-container img {
+            max-width: 150px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .form-control::placeholder {
+            color: #999;
+        }
+
+        .login-link {
+            display: block;
+            margin-bottom: 25px;
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .login-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 
-<body class="bg-custom">
-    <div class="sufee-login d-flex align-content-center flex-wrap">
-        <div class="container">
-            <div class="login-content">
-                <div class="login-form">
-                    <?= form_open('auth/process_save', array('id' => 'form-register', 'method' => 'post')) ?>
-                    <div class="form-group">
-                        <label>Nama</label>
-                        <?= form_input(array('name' => 'nama', 'id' => 'nama', 'class' => 'form-control form-control-sm', 'placeholder' => 'Nama')) ?>
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail</label>
-                        <?= form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control form-control-sm', 'placeholder' => 'E-mail')) ?>
-                    </div>
-                    <div class="form-group">
-                        <label>Username</label>
-                        <?= form_input(array('name' => 'username', 'id' => 'username', 'class' => 'form-control form-control-sm', 'placeholder' => 'Username')) ?>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <?= form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control form-control-sm', 'placeholder' => 'Password')) ?>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <a href="<?= login_url() ?>">Sudah Punya Akun?</a>
-                        </div>
-                    </div>
-                    <?= form_input(array('type' => 'submit', 'name' => 'register', 'value' => 'Daftar', 'id' => 'register', 'class' => 'btn btn-success btn-flat m-b-30 m-t-30')) ?>
-                    <?= form_close() ?>
+<body>
+    <div class="split-screen-container">
+        <div class="left-pane">
+            <div class="login-box">
+                <div class="logo-container">
+                    <img src="<?= base_url('public/assets/logo.png') ?>" alt="Logo">
                 </div>
+
+                <?= form_open('auth/process_save', array('id' => 'form-register', 'method' => 'post')) ?>
+
+                <div class="input-group">
+                    <i class="fas fa-id-card"></i>
+                    <?= form_input(array('name' => 'nama', 'id' => 'nama', 'class' => 'form-control form-control-sm', 'placeholder' => 'Nama')) ?>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <?= form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control form-control-sm', 'placeholder' => 'E-mail')) ?>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <?= form_input(array('name' => 'username', 'id' => 'username', 'class' => 'form-control form-control-sm', 'placeholder' => 'Username')) ?>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <?= form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control form-control-sm', 'placeholder' => 'Password')) ?>
+                </div>
+
+                <a href="<?= login_url() ?>" class="login-link">Sudah Punya Akun?</a>
+
+                <?= form_input(array('type' => 'submit', 'name' => 'register', 'value' => 'Daftar', 'id' => 'register', 'class' => 'btn-submit')) ?>
+
+                <?= form_close() ?>
             </div>
         </div>
+
+        <div class="right-pane"></div>
     </div>
 
     <script type="text/javascript" src="<?= assets_url() ?>admin/jquery/js/jquery.min.js"></script>
@@ -86,15 +193,23 @@
                         success: function(response) {
                             $('#register').val('Register');
 
-                            swal({
+                            if (response.type == 'error') {
+                                swal({
                                     title: response.title,
                                     text: response.text,
                                     icon: response.type,
                                     button: response.button,
-                                })
-                                .then((value) => {
+                                });
+                            } else {
+                                swal({
+                                    title: response.title,
+                                    text: response.text,
+                                    icon: response.type,
+                                    button: response.button,
+                                }).then((value) => {
                                     location.href = "<?= login_url() ?>";
                                 });
+                            }
                         }
                     })
                 }

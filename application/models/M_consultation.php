@@ -10,13 +10,14 @@ class M_consultation extends CI_Model
 
     public function get_all_data_dt($id_users = null)
     {
-        $this->datatables->select('c.id_consultation, c.id_users, u.nama, c.created_at');
+        $this->datatables->select('c.id_consultation, c.id_users, u.nama, c.created_at, cl.nama as nama_classification');
         $this->datatables->join('tb_users AS u', 'u.id_users = c.id_users', 'left');
+        $this->datatables->join('tb_classification AS cl', 'cl.id_classification = c.id_classification', 'left');
         if ($id_users != null) {
             $this->datatables->where('c.id_users', $id_users);
         }
         $this->datatables->order_by('c.created_at', 'desc');
-        $this->datatables->from('tb_consultation AS c ');
+        $this->datatables->from('tb_consultation AS c');
         return print_r($this->datatables->generate());
     }
 }

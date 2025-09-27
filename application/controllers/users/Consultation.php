@@ -79,6 +79,10 @@ class Consultation extends MY_Controller
             $classification_food = $this->m_classification_food->get_show_classification($show_classification->id_classification)->result_array();
         }
 
+        $this->crud->u('tb_consultation', [
+            'id_classification' => $show_classification->id_classification,
+        ], ['id_consultation' => $id]);
+
         // Buat data untuk grafik (Tree Visualization)
         $treeData = json_encode($graphTree, JSON_PRETTY_PRINT);
         

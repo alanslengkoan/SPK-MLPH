@@ -28,14 +28,6 @@
     <div class="main-body">
         <div class="page-wrapper">
             <div class="page-body">
-                <div class="card">
-                    <div class="card-block table-border-style">
-                        <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#produkCard" aria-expanded="false" aria-controls="produkCard">
-                            Tampilkan Proses Perhitungan
-                        </button>
-                    </div>
-                </div>
-
                 <div class="collapse" id="produkCard">
                     <div class="card">
                         <div class="card-header">
@@ -128,38 +120,46 @@
                         <hr />
                         <h5>Rekomendasi Makanan:</h5>
                         <?php if (count($classification_food) !== 0) : ?>
-                            <table class="table table-striped table-bordered" style="width: 100%;">
-                                <thead>
-                                    <tr align="center">
-                                        <th>Nama</th>
-                                        <th>Berat</th>
-                                        <th>URT</th>
-                                        <th>Kalori</th>
-                                        <th>Protein</th>
-                                        <th>Lemak</th>
-                                        <th>Karbohidrat</th>
-                                        <th>Serat</th>
-                                        <th>Natrium</th>
-                                        <th>Kalium</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($classification_food as $key => $value) : ?>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered" style="width: 100%;">
+                                    <thead>
                                         <tr align="center">
-                                            <td><?= $value['name'] ?></td>
-                                            <td><?= $value['weight'] ?></td>
-                                            <td><?= $value['urt'] ?></td>
-                                            <td><?= $value['kalori'] ?></td>
-                                            <td><?= $value['protein'] ?></td>
-                                            <td><?= $value['lemak'] ?></td>
-                                            <td><?= $value['karbohidrat'] ?></td>
-                                            <td><?= $value['serat'] ?></td>
-                                            <td><?= $value['natrium'] ?></td>
-                                            <td><?= $value['kalium'] ?></td>
+                                            <th>Nama</th>
+                                            <th>Berat (Gram)</th>
+                                            <th>URT</th>
+                                            <th>Kalori (KKAL)</th>
+                                            <th>Protein (Gram)</th>
+                                            <th>Lemak (Gram)</th>
+                                            <th>Karbohidrat (Gram)</th>
+                                            <th>Serat (Gram)</th>
+                                            <th>Natrium (Mili Gram)</th>
+                                            <th>Kalium (Mili Gram)</th>
+                                            <th>Cara Penyajian</th>
+                                            <th>Frekuensi/Minggu</th>
+                                            <th>Konsumsi Bulanan</th>
                                         </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($classification_food as $key => $value) : ?>
+                                            <tr align="center">
+                                                <td><?= $value['name'] ?></td>
+                                                <td><?= $value['weight'] ?></td>
+                                                <td><?= $value['urt'] ?></td>
+                                                <td><?= $value['kalori'] ?></td>
+                                                <td><?= $value['protein'] ?></td>
+                                                <td><?= $value['lemak'] ?></td>
+                                                <td><?= $value['karbohidrat'] ?></td>
+                                                <td><?= $value['serat'] ?></td>
+                                                <td><?= $value['natrium'] ?></td>
+                                                <td><?= $value['kalium'] ?></td>
+                                                <td><?= $value['Cara Penyajian'] ?></td>
+                                                <td><?= $value['Frekuensi/Minggu'] ?></td>
+                                                <td><?= $value['Konsumsi Bulanan'] ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         <?php else : ?>
                             Tidak ada rekomendasi makanan
                         <?php endif; ?>

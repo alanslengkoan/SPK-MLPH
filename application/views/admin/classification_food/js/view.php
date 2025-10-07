@@ -41,7 +41,7 @@
                     className: 'text-center',
                 },
                 {
-                    title: 'Berat',
+                    title: 'Berat (Gram)',
                     data: 'weight',
                     className: 'text-center',
                 },
@@ -51,37 +51,37 @@
                     className: 'text-center',
                 },
                 {
-                    title: 'Kalori',
+                    title: 'Kalori (KKAL)',
                     data: 'kalori',
                     className: 'text-center',
                 },
                 {
-                    title: 'Protein',
+                    title: 'Protein (Gram)',
                     data: 'protein',
                     className: 'text-center',
                 },
                 {
-                    title: 'Lemak',
+                    title: 'Lemak (Gram)',
                     data: 'lemak',
                     className: 'text-center',
                 },
                 {
-                    title: 'Karbohidrat',
+                    title: 'Karbohidrat (Gram)',
                     data: 'karbohidrat',
                     className: 'text-center',
                 },
                 {
-                    title: 'Serat',
+                    title: 'Serat (Gram)',
                     data: 'serat',
                     className: 'text-center',
                 },
                 {
-                    title: 'Natrium',
+                    title: 'Natrium (Mili Gram)',
                     data: 'natrium',
                     className: 'text-center',
                 },
                 {
-                    title: 'Kalium',
+                    title: 'Kalium (Mili Gram)',
                     data: 'kalium',
                     className: 'text-center',
                 },

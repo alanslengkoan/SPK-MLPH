@@ -10,7 +10,7 @@ class M_classification_food extends CI_Model
 
     public function get_show_classification($id_classification)
     {
-        $result = $this->db->query("SELECT cf.id_classification_food, cf.id_classification, cf.name, cf.weight, cf.urt, cf.kalori, cf.protein, cf.lemak, cf.karbohidrat, cf.serat, cf.natrium, cf.kalium FROM tb_classification_food AS cf WHERE cf.id_classification = '$id_classification' ORDER BY RAND() LIMIT 2");
+        $result = $this->db->query("SELECT cf.id_classification_food, cf.id_classification, cf.name, cf.weight, cf.urt, cf.kalori, cf.protein, cf.lemak, cf.karbohidrat, cf.serat, cf.natrium, cf.kalium, cf.`Cara Penyajian`, cf.`Frekuensi/Minggu`, cf.`Konsumsi Bulanan` FROM tb_classification_food AS cf WHERE cf.id_classification = '$id_classification' ORDER BY RAND() LIMIT 15");
         return $result;
     }
 
